@@ -1,0 +1,196 @@
+/* General Container Styles */
+.conference-detail-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #F0F4F8, #D8E1E9); /* Soft pastel gradient */
+    border-radius: 20px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Title Styles */
+  h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #2C3E50; /* Darker text for readability */
+    text-align: center;
+    font-weight: 600;
+  }
+  
+  h3 {
+    font-size: 1.8rem;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    color: #34495E; /* Slightly lighter for the section titles */
+    font-weight: 500;
+    text-align: center;
+  }
+  
+  /* Conference Details */
+  .conference-details {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    color: #34495E;
+    margin-bottom: 30px;
+  }
+  
+  .conference-details p {
+    margin: 8px 0;
+    font-size: 1.1rem;
+  }
+  
+  /* Loading Message */
+  .loading-message {
+    font-style: italic;
+    color: #7F8C8D; /* Subtle gray color */
+    text-align: center;
+  }
+  
+  /* Feedback Section */
+  .feedback-section {
+    margin-top: 40px;
+  }
+  
+  .feedback-card {
+    background-color: #ffffff;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    color: #34495E;
+  }
+  
+  .feedback-card p {
+    margin: 10px 0;
+  }
+  
+  .no-feedback p {
+    font-weight: bold;
+    color: #BDC3C7; /* Light gray for no feedback message */
+    text-align: center;
+  }
+  
+  /* Form Styles */
+  .submit-feedback-section {
+    margin-top: 40px;
+    background-color: #ffffff;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  }
+  
+  .form-group {
+    margin-bottom: 20px;
+  }
+  
+  label {
+    font-weight: bold;
+    margin-bottom: 10px;
+    display: block;
+    color: #2C3E50;
+  }
+  
+  .form-control {
+    width: 100%;
+    padding: 12px;
+    font-size: 1rem;
+    border-radius: 8px;
+    border: 1px solid #BDC3C7;
+    background-color: #ECF0F1;
+    color: #34495E;
+    transition: 0.3s ease;
+  }
+  
+  .form-control:focus {
+    outline: none;
+    border-color: #1ABC9C; /* Soft teal accent */
+    background-color: #ffffff;
+  }
+  
+  textarea {
+    height: 150px;
+  }
+  
+  .form-control::placeholder {
+    color: #BDC3C7;
+  }
+  
+  /* Submit Button */
+  .submit-button {
+    background-color: #1ABC9C; /* Teal color for CTA */
+    color: white;
+    padding: 12px 30px;
+    font-size: 1.1rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 10px;
+    display: block;
+    width: 100%;
+  }
+  
+  .submit-button:hover {
+    background-color: #16A085; /* Darker teal on hover */
+  }
+  
+  .submit-button:disabled {
+    background-color: #BDC3C7; /* Disabled color */
+    cursor: not-allowed;
+  }
+  
+  /* Responsive Styles */
+  @media (max-width: 768px) {
+    .conference-detail-container {
+      padding: 15px;
+    }
+  
+    h2 {
+      font-size: 2rem;
+    }
+  
+    h3 {
+      font-size: 1.5rem;
+    }
+  
+    .form-control {
+      padding: 10px;
+    }
+  
+    .submit-button {
+      padding: 10px 25px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .conference-detail-container {
+      padding: 10px;
+    }
+  
+    h2 {
+      font-size: 1.6rem;
+    }
+  
+    h3 {
+      font-size: 1.3rem;
+    }
+  
+    .conference-details p,
+    .feedback-card p {
+      font-size: 1rem;
+    }
+  
+    .form-control {
+      font-size: 0.9rem;
+    }
+  
+    .submit-button {
+      padding: 8px 20px;
+    }
+  }
+  

@@ -1,0 +1,11 @@
+<h2>Room List</h2>
+<table>
+  <tr>
+    <th>Room Number</th>
+    <th>Building</th>
+  </tr>
+  <tr *ngFor="let room of rooms">
+    <td>{{ room.roomNumber }}</td>
+    <td>{{ room.building }}</td>
+  </tr>
+</table>

@@ -1,0 +1,80 @@
+<!-- VIP Section -->
+<div class="hero-section" *ngIf="!vip && matricule.length === 0">
+  <div class="hero-overlay">
+    <div class="hero-content">
+      <h1>🌟 Become a VIP Member</h1>
+      <p>
+        Unlock exclusive access to premium features, VIP conferences, and special events.
+      </p>
+      <a class="btn btn-vip" href="/paiements">Buy Membership</a>
+    </div>
+  </div>
+</div>
+
+<!-- Followed Interests -->
+<div class="conference-container" *ngIf="followedConferences.length > 0">
+  <h2 class="section-title">🎯 Based on Your Interests</h2>
+  <p class="welcome-text">Tailored conferences just for you:</p>
+
+  <div class="conference-list">
+    <div *ngFor="let conference of followedConferences" class="conference-card animate-card">
+      <h3>{{ conference.topic }}</h3>
+      <p class="location">📍 {{ conference.location }}</p>
+      <p class="category">🏷️ Category: {{ conference.category }}</p>
+
+      <div *ngIf="vip || matricule.length > 0" class="button-group">
+        <button
+          class="btn btn-primary"
+          (click)="participateInConference(conference.id)"
+          [disabled]="conference.participants.includes(userId)">
+          {{
+            conference.participants.includes(userId)
+              ? "✅ Already Joined"
+              : "🚀 Join Now"
+          }}
+        </button>
+
+        <button
+          class="btn btn-info"
+          (click)="navigateToConferenceDetail(conference.id)">
+          📝 Add Feedback
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- All Conferences -->
+<div class="conference-container">
+  <h2 class="section-title">🌍 Explore All Conferences</h2>
+  <p class="welcome-text">
+    Dive into groundbreaking discussions and collaborate with experts worldwide!
+  </p>
+
+  <div class="conference-list">
+    <div *ngFor="let conference of conferences" class="conference-card animate-card">
+      <h3>{{ conference.topic }}</h3>
+      <p class="location">📍 {{ conference.location }}</p>
+      <p class="category">🏷️ Category: {{ conference.category }}</p>
+
+      <div *ngIf="vip || matricule.length > 0" class="button-group">
+        <button
+          class="btn btn-primary"
+          (click)="participateInConference(conference.id)"
+          [disabled]="conference.participants.includes(userId)">
+          {{
+            conference.participants.includes(userId)
+              ? "✅ Already Joined"
+              : "🚀 Join Now"
+          }}
+        </button>
+
+        <button
+          class="btn btn-info"
+          (click)="navigateToConferenceDetail(conference.id)">
+          📝 Add Feedback
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

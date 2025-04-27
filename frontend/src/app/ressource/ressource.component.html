@@ -1,0 +1,75 @@
+<div class="resources-container">
+  <h2>Resources</h2>
+
+  <!-- Display resources -->
+  <ul class="resource-list">
+    <li *ngFor="let resource of resources">
+      {{ resource.name }} - {{ resource.type }} - {{ resource.location }} ({{ resource.capacity }})
+    </li>
+  </ul>
+
+  <h3>Create New Resource</h3>
+
+  <!-- Form to add new resource -->
+  <form (ngSubmit)="createRessource()" class="resource-form">
+    <div class="form-group">
+      <label for="name">Name:</label>
+      <input 
+        id="name" 
+        [(ngModel)]="newRessource.name" 
+        name="name" 
+        placeholder="Enter resource name" 
+        required
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="type">Type:</label>
+      <select 
+        id="type" 
+        [(ngModel)]="newRessource.type" 
+        name="type" 
+        required
+      >
+        <option *ngFor="let type of ressouceTypes" [value]="type">{{ type }}</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="location">Location:</label>
+      <input 
+        id="location" 
+        [(ngModel)]="newRessource.location" 
+        name="location" 
+        placeholder="Enter location" 
+        required
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="description">Description:</label>
+      <textarea 
+        id="description" 
+        [(ngModel)]="newRessource.description" 
+        name="description" 
+        placeholder="Enter description" 
+        required
+      ></textarea>
+    </div>
+
+    <div class="form-group">
+      <label for="capacity">Capacity:</label>
+      <input 
+        id="capacity" 
+        [(ngModel)]="newRessource.capacity" 
+        name="capacity" 
+        placeholder="Enter capacity" 
+        required
+      />
+    </div>
+
+    <button type="submit" [disabled]="!newRessource.name || !newRessource.location || !newRessource.capacity">
+      Create Resource
+    </button>
+  </form>
+</div>

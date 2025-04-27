@@ -1,0 +1,65 @@
+/* ==============================
+   🎨 FORM STYLING FOR ADD ROOM PAGE
+=============================== */
+.room-form {
+    max-width: 500px;
+    margin: 40px auto;
+    padding: 30px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    font-family: 'Arial', sans-serif;
+  }
+  
+  .room-form h2 {
+    color: #2c3e50;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  .room-form label {
+    font-size: 1rem;
+    color: #2c3e50;
+    margin-bottom: 8px;
+    display: block;
+  }
+  
+  .room-form input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+  }
+  
+  .room-form input[type="number"] {
+    -moz-appearance: textfield; /* Removes number input arrows in Firefox */
+  }
+  
+  .room-form input:focus {
+    outline: none;
+    border-color: #1abc9c;
+  }
+  
+  .room-form button {
+    background: #1abc9c;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s;
+    border: none;
+    width: 100%;
+    font-size: 1rem;
+  }
+  
+  .room-form button:hover {
+    background: #16a085;
+  }
+  .error {
+    color: red;
+    font-size: 14px;
+  }

@@ -1,0 +1,206 @@
+/* ==============================
+   🎨 GLOBAL VARIABLES
+================================ */
+:root {
+    --primary: #6c63ff;
+    --secondary: #ff3cac;
+    --background: #121212;
+    --text: #ffffff;
+    --glass: rgba(255, 255, 255, 0.1);
+}
+
+/* ==============================
+   🚀 HERO SECTION
+================================ */
+.hero {
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 20px;
+    color: var(--text);
+}
+
+
+.hero h1 {
+    font-size: 4rem;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.hero .highlight {
+    color: #ffeb3b;
+}
+
+/* ==============================
+   🎯 BUTTONS & CALL TO ACTIONS
+================================ */
+.cta-buttons {
+    margin-top: 20px;
+}
+
+.btn {
+    font-size: 1.2rem;
+    padding: 12px 24px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s;
+}
+
+.btn-primary {
+    background: var(--primary);
+    color: rgb(0, 0, 0);
+    box-shadow: 0 4px 10px rgba(108, 99, 255, 0.4);
+}
+
+.btn-primary:hover {
+    background: #4e95ff;
+    box-shadow: 0 6px 15px rgba(108, 99, 255, 0.6);
+}
+
+.btn-secondary {
+    background: transparent;
+    color: var(--primary);
+    border: 2px solid var(--primary);
+}
+
+.btn-secondary:hover {
+    background: var(--primary);
+    color: rgb(14, 90, 255);
+}
+
+/* ==============================
+   📊 STATISTICS SECTION
+================================ */
+.stats {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.stat-card {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+    width: 140px;
+    text-align: center;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.stat-card h4 {
+    font-size: 1.8rem;
+    margin: 10px 0 5px;
+    color: #000000;
+}
+
+.stat-card p {
+    font-size: 1rem;
+    color: #555;
+}
+.stat-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+/* ==============================
+   🔥 SECTIONS & CONTENT BLOCKS
+================================ */
+.section {
+    padding: 80px 0;
+    background-color: var(--background);
+    color: var(--text);
+    text-align: center;
+}
+
+.section h2 {
+    font-size: 2.8rem;
+    margin-bottom: 20px;
+    color: var(--primary);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.section p {
+    font-size: 1.2rem;
+    color: #bbbbbb;
+}
+
+.section .container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+}
+
+/* ==============================
+   🏆 FEATURES & STEPS CARDS
+================================ */
+.feature-card, .step-card {
+    background: var(--glass);
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 6px 15px rgba(255, 255, 255, 0.15);
+    text-align: center;
+    backdrop-filter: blur(10px);
+}
+
+/* ==============================
+   🎭 3D EFFECTS & INTERACTIONS
+================================ */
+.three-d-section {
+    padding: 80px 0;
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    text-align: center;
+}
+
+.three-d-container {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+}
+
+.three-d-card {
+    background: var(--glass);
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 12px 25px rgba(255, 255, 255, 0.2);
+    transition: transform 0.5s;
+}
+
+.three-d-card:hover {
+    transform: scale(1.1);
+}
+
+/* ==============================
+   🏁 FOOTER SECTION
+================================ */
+footer {
+    background-color: #1c1c1c;
+    padding: 20px 0;
+    color: var(--text);
+}
+
+/* ==============================
+   💡 JOIN US SECTION
+================================ */
+.join-us-section {
+    padding: 80px 0;
+    background: linear-gradient(135deg, #ff3cac, #ff9a9e);
+    color: rgb(255, 255, 255);
+    text-align: center;
+}
+
+.join-us-section .btn-primary {
+    background-color: rgb(87, 87, 87);
+    color: var(--primary);
+}
+
+.join-us-section .btn-primary:hover {
+    background-color: var(--primary);
+    color: white;
+}

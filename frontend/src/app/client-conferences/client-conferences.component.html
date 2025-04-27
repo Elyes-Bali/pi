@@ -1,0 +1,41 @@
+<div class="container mt-5 participated-conferences">
+    <h2 class="mb-5 text-center fw-bold section-title">My Participated Conferences</h2>
+  
+    <div *ngIf="conferences.length > 0; else noConferences">
+      <div class="row g-4">
+        <div *ngFor="let conference of conferences" class="col-md-6 col-lg-4">
+          <div class="card h-100 conference-card animate-card">
+            <div class="position-relative">
+              <div class="badge conference-badge" [ngClass]="conference.onlineMode ? 'badge-online' : 'badge-onsite'">
+                {{ conference.onlineMode ? 'Online' : 'On-Site' }}
+              </div>
+              <div class="card-header text-center">
+                <h5 class="card-title mb-0">{{ conference.topic }}</h5>
+              </div>
+            </div>
+            <div class="card-body d-flex flex-column">
+              <ul class="list-unstyled mb-4 conference-details">
+                <li><i class="bi bi-geo-alt-fill"></i> <strong>Location:</strong> {{ conference.location }}</li>
+                <li><i class="bi bi-calendar-event-fill"></i> <strong>Deadline:</strong> {{ conference.deadline  }}</li>
+                <li><i class="bi bi-tags-fill"></i> <strong>Category:</strong> {{ conference.category }}</li>
+              </ul>
+  
+              <ng-container *ngIf="conference.onlineMode">
+                <a [href]="conference.zoomLink" target="_blank" class="btn zoom-btn w-100 mt-auto">
+                  🎥 Join Zoom Meeting
+                </a>
+              </ng-container>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    <ng-template #noConferences>
+      <div class="alert alert-info text-center mt-5" role="alert">
+        <h4 class="alert-heading">No Conferences Yet</h4>
+        <p>You have not participated in any conferences yet.</p>
+      </div>
+    </ng-template>
+  </div>
+  

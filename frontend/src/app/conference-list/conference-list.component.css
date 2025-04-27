@@ -1,0 +1,172 @@
+/* Overall Background */
+body {
+  background: linear-gradient(to bottom, #f0f2f5, #ffffff);
+}
+
+/* Hero Section */
+.hero-section {
+  background: linear-gradient(135deg, #8e24aa, #d81b60);
+  position: relative;
+  height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-overlay {
+  background: rgba(0, 0, 0, 0.6);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-content {
+  text-align: center;
+  color: #fff;
+  padding: 20px;
+  max-width: 700px;
+}
+
+.hero-content h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+.hero-content p {
+  font-size: 1.4rem;
+  margin-bottom: 25px;
+}
+
+/* VIP Button */
+.btn-vip {
+  background: linear-gradient(135deg, #8e24aa, #d81b60);
+  padding: 12px 30px;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 30px;
+  color: white;
+  font-weight: bold;
+  transition: all 0.4s ease;
+}
+
+.btn-vip:hover {
+  background: linear-gradient(135deg, #6a1b9a, #c2185b);
+  transform: scale(1.05);
+}
+
+/* Conference Section */
+.conference-container {
+  text-align: center;
+  padding: 80px 20px;
+}
+
+.section-title {
+  font-size: 2.8rem;
+  margin-bottom: 15px;
+  color: #3f51b5;
+}
+
+.welcome-text {
+  font-size: 1.2rem;
+  color: #555;
+  margin-bottom: 40px;
+}
+
+/* Conference List */
+.conference-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 25px;
+}
+
+/* Conference Card */
+.conference-card {
+  background: white;
+  padding: 25px 20px;
+  width: 320px;
+  border-radius: 15px;
+  text-align: center;
+  box-shadow: 0 10px 20px rgba(63, 81, 181, 0.1);
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.conference-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 30px rgba(63, 81, 181, 0.2);
+}
+
+/* Card Animations */
+.animate-card {
+  animation: fadeInUp 0.8s ease;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Text inside Card */
+.conference-card h3 {
+  font-size: 1.7rem;
+  color: #3949ab;
+  margin-bottom: 15px;
+}
+
+.location, .category {
+  font-size: 1rem;
+  color: #666;
+  margin-bottom: 10px;
+}
+
+/* Button Group */
+.button-group {
+  display: flex;
+  gap: 10px;
+  margin-top: 15px;
+  flex-direction: column;
+}
+
+/* Buttons */
+.btn-primary, .btn-info {
+  padding: 10px;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.btn-primary {
+  background-color: #3f51b5;
+  color: #fff;
+}
+
+.btn-primary:hover {
+  background-color: #303f9f;
+  transform: scale(1.05);
+}
+
+.btn-info {
+  background-color: #00bcd4;
+  color: #fff;
+}
+
+.btn-info:hover {
+  background-color: #0097a7;
+  transform: scale(1.05);
+}
+
+/* Small Glowing Effect on Join Button */
+.btn-primary:disabled {
+  background-color: #9fa8da;
+  cursor: not-allowed;
+}

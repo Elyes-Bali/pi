@@ -1,0 +1,148 @@
+.category-selection {
+    min-height: 100vh;
+    padding: 50px 20px;
+    background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+    background-image: url('https://www.transparenttextures.com/patterns/cubes.png'); /* Light background texture */
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+    position: relative;
+  }
+  
+  /* Big title */
+  .title {
+    font-size: 3rem;
+    font-weight: bold;
+    color: #2c3e50;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+  
+  /* Subtitle */
+  .subtitle {
+    font-size: 1.2rem;
+    color: #636e72;
+    text-align: center;
+    margin-bottom: 40px;
+    max-width: 600px;
+  }
+  
+  /* Grid */
+  .category-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 25px;
+    width: 100%;
+    max-width: 1200px;
+  }
+  
+  /* Each item */
+  .category-item {
+    background: white;
+    border-radius: 16px;
+    padding: 30px 20px;
+    text-align: center;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    animation: fadeIn 0.5s ease forwards;
+  }
+  
+  /* Checkbox hidden */
+  .category-item input[type="checkbox"] {
+    display: none;
+  }
+  
+  /* Icon placeholder */
+  .icon-wrapper {
+    width: 50px;
+    height: 50px;
+    margin: 0 auto 15px;
+    background: #74b9ff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  /* (Optional) Category icons */
+  .category-icon {
+    width: 30px;
+    height: 30px;
+    background-image: url('https://cdn-icons-png.flaticon.com/512/1055/1055646.png'); /* Example icon */
+    background-size: cover;
+  }
+  
+  /* Label text */
+  .category-item span {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #34495e;
+    display: block;
+  }
+  
+  /* Checked */
+  .category-item input[type="checkbox"]:checked + div + span {
+    color: white;
+  }
+  
+  /* Hover */
+  .category-item:hover {
+    background: #74b9ff;
+    color: white;
+  }
+  
+  /* Checked background */
+  .category-item input[type="checkbox"]:checked + div + span {
+    background: #0984e3;
+    padding: 10px;
+    border-radius: 10px;
+  }
+  
+  /* Continue button */
+  .continue-button {
+    margin-top: 40px;
+    padding: 15px 40px;
+    background-color: #0984e3;
+    color: white;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 30px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    transition: background 0.3s;
+  }
+  
+  .continue-button:hover {
+    background-color: #74b9ff;
+    cursor: pointer;
+  }
+  
+  /* Fade-in animation */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    } to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Responsive */
+  @media (max-width: 768px) {
+    .title {
+      font-size: 2.2rem;
+    }
+    .subtitle {
+      font-size: 1rem;
+    }
+    .category-item {
+      padding: 20px;
+    }
+  }
+  

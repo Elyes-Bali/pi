@@ -1,0 +1,53 @@
+<div *ngIf="errorMessage" class="alert alert-danger">
+  {{ errorMessage }}
+</div>
+
+<form (ngSubmit)="saveSession()" class="session-form">
+  <div class="form-group">
+    <label for="topic">Topic:</label>
+    <input 
+      type="text" 
+      id="topic" 
+      [(ngModel)]="session.topic" 
+      name="topic" 
+      placeholder="Enter session topic" 
+      required
+    />
+  </div>
+
+  <div class="form-group">
+    <label for="startTime">Start Time:</label>
+    <input 
+      type="datetime-local" 
+      id="startTime" 
+      [(ngModel)]="session.startTime" 
+      name="startTime" 
+      required
+    />
+  </div>
+
+  <div class="form-group">
+    <label for="endTime">End Time:</label>
+    <input 
+      type="datetime-local" 
+      id="endTime" 
+      [(ngModel)]="session.endTime" 
+      name="endTime" 
+      required
+    />
+  </div>
+
+  <div class="form-group">
+    <label for="room">Room:</label>
+    <select 
+      id="room" 
+      [(ngModel)]="session.room" 
+      name="room" 
+      required
+    >
+      <option *ngFor="let room of rooms" [ngValue]="room">{{ room.name }} - {{ room.roomNumber }}</option>
+    </select>
+  </div>
+
+  <button type="submit" class="submit-button">Save Session</button>
+</form>

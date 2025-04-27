@@ -1,0 +1,105 @@
+/* ==============================
+   🎨 RESOURCES PAGE DESIGN
+=============================== */
+.resources-container {
+  width: 100%;
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 30px;
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  font-family: 'Arial', sans-serif;
+  text-align: center;
+}
+
+/* Heading styling */
+.resources-container h2, .resources-container h3 {
+  color: #2c3e50;
+  margin-bottom: 20px;
+}
+
+/* List of resources */
+.resource-list {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 40px;
+}
+
+.resource-list li {
+  font-size: 1rem;
+  color: #34495e;
+  margin-bottom: 10px;
+  text-align: left;
+}
+
+/* Form styling */
+.resource-form {
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.resource-form .form-group {
+  margin-bottom: 20px;
+}
+
+.resource-form label {
+  font-size: 1rem;
+  color: #2c3e50;
+  margin-bottom: 5px;
+  display: block;
+}
+
+.resource-form input, 
+.resource-form select, 
+.resource-form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+.resource-form input[type="number"], 
+.resource-form input[type="text"], 
+.resource-form select {
+  height: 40px;
+}
+
+.resource-form textarea {
+  height: 100px;
+  resize: vertical;
+}
+
+/* Focus effect */
+.resource-form input:focus, 
+.resource-form select:focus, 
+.resource-form textarea:focus {
+  outline: none;
+  border-color: #1abc9c;
+}
+
+/* Submit Button */
+.resource-form button {
+  background: #1abc9c;
+  color: white;
+  padding: 12px 20px;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  width: 100%;
+  font-size: 1.1rem;
+  border: none;
+  transition: background-color 0.3s ease;
+}
+
+.resource-form button:hover {
+  background: #16a085;
+}
+
+.resource-form button:disabled {
+  background-color: #bdc3c7;
+  cursor: not-allowed;
+}

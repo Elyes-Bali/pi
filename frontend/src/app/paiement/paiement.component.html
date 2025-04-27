@@ -1,0 +1,35 @@
+<div class="payment-container">
+    <div class="payment-card">
+      <h2 class="payment-title">Secure Payment</h2>
+
+      <div *ngIf="paymentSuccess" class="success-message">
+        ✅ Payment Successful! Thank you for your purchase.
+      </div>
+      
+      <form (submit)="addPaiement()" class="payment-form">
+        <div class="input-group">
+          <label>Amount</label>
+          <input type="number" [(ngModel)]="newPaiement.amount" name="amount" value="15" readonly />
+        </div>
+  
+        <div class="input-group">
+          <label>Card Number</label>
+          <input type="number" [(ngModel)]="newPaiement.cardnumber" name="cardnumber" placeholder="xxxx-xxxx-xxxx-xxxx" required />
+        </div>
+  
+        <div class="input-row">
+          <div class="input-group">
+            <label>CCV</label>
+            <input type="number" [(ngModel)]="newPaiement.ccv" name="ccv" placeholder="123" required />
+          </div>
+          <div class="input-group">
+            <label>Card Holder</label>
+            <input type="text" [(ngModel)]="newPaiement.holder" name="holder" placeholder="Cardholder Name" required />
+          </div>
+        </div>
+  
+        <button type="submit" class="pay-btn">Confirm Payment</button>
+      </form>
+    </div>
+  </div>
+  

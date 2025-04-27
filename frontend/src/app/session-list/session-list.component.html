@@ -1,0 +1,19 @@
+<h2>Session List</h2>
+<table>
+  <tr>
+    <th>Topic</th>
+    <th>Start Time</th>
+    <th>End Time</th>
+    <th>Room</th>
+    <th>Actions</th>
+  </tr>
+  <tr *ngFor="let session of sessions">
+    <td>{{ session.topic }}</td>
+    <td>{{ session.startTime }}</td>
+    <td>{{ session.endTime }}</td>
+    <td>{{ session.room.roomNumber }}</td>
+    <td>
+      <button (click)="deleteSession(session.id!)">Delete</button>
+    </td>
+  </tr>
+</table>

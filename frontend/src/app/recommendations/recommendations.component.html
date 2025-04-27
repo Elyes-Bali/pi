@@ -1,0 +1,24 @@
+<div class="category-selection" *ngIf="userDetails && userDetails.followedCategories">
+    <h1 class="title">Select Your Interests</h1>
+    <p class="subtitle">Tell us what you're passionate about! We'll customize your experience based on your favorite fields.</p>
+  
+    <div class="category-grid">
+      <label *ngFor="let category of categories" class="category-item">
+        <input
+          type="checkbox"
+          [value]="category"
+          [checked]="selectedCategories.includes(category)"
+          (change)="onCategoryChange($event, category)"
+        />
+        <div class="icon-wrapper">
+          <i class="category-icon"></i> <!-- empty icon, styled per category -->
+        </div>
+        <span>{{ category }}</span>
+      </label>
+    </div>
+  
+    <a href="/conferences" class="continue-button"> Continue</a>"
+     
+   
+  </div>
+  

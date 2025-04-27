@@ -1,0 +1,67 @@
+<div class="dashboard-container">
+  <!-- Sidebar Navigation -->
+  <aside class="sidebar">
+    <h3>Dashboard</h3>
+    <ul>
+      <li><a href="/">Home</a></li>
+      <li><a href="/myconferences">My Participants</a></li>
+      <li><a href="/add-conf">New Conference</a></li>
+      <li><a href="/orgaConf">All Conference</a></li>
+    </ul>
+  </aside>
+
+  <!-- Main Content -->
+  <main class="dashboard-content">
+    <h2>Your Conferences</h2>
+
+
+
+    <!-- Conference List -->
+    <div *ngIf=" myConferences.length > 0" class="conference-list">
+      <div *ngFor="let conference of myConferences" class="conference-card">
+        <h3>{{ conference.topic }}</h3>
+        <p><strong>📍 Location:</strong> {{ conference.location }}</p>
+        <p><strong>📅 Deadline:</strong> {{ conference.deadline }}</p>
+
+        <!-- Resources Section -->
+        <div *ngIf="conference.ressources.length > 0">
+          <h4>Resources</h4>
+          <ul>
+            <li *ngFor="let resource of conference.ressources">
+              {{ resource.name }} - {{ resource.type }}
+            </li>
+          </ul>
+        </div>
+
+        <!-- Sessions Section -->
+        <div *ngIf="conference.sessions.length > 0">
+          <h4>Sessions</h4>
+          <ul>
+            <li *ngFor="let session of conference.sessions">
+              {{ session.topic }} - {{ session.room.building }}
+            </li>
+          </ul>
+        </div>
+        <p>
+          <strong>📅 ZoomLink:</strong>
+          {{ conference.zoomLink && conference.zoomLink.length > 0 ? conference.zoomLink.substring(0, 20) : 'No Zoom Link Yet' }}
+        </p>
+
+        <!-- Action Buttons -->
+        <div class="conference-actions">
+          <button class="btn btn-primary" (click)="navigateToUpdate(conference.id)">
+            Update
+          </button>
+          <button class="btn btn-danger" (click)="deleteConference(conference.id)">
+            Delete
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Message when no conferences exist -->
+    <div *ngIf=" myConferences.length === 0">
+      <p class="no-conference-message">You have not created any conferences yet.</p>
+    </div>
+  </main>
+</div>

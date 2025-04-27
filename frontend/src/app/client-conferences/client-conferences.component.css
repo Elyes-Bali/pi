@@ -1,0 +1,108 @@
+/* Page Background */
+body {
+    background: linear-gradient(to bottom right, #e3f2fd, #ffffff);
+  }
+  
+  /* Section Title */
+  .section-title {
+    font-size: 2.8rem;
+    color: #1976d2;
+  }
+  
+  /* Card */
+  .conference-card {
+    border: none;
+    border-radius: 20px;
+    overflow: hidden;
+    background: #ffffff;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+  }
+  
+  .conference-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 25px rgba(25, 118, 210, 0.3);
+  }
+  
+  /* Card Animation */
+  .animate-card {
+    animation: fadeInUp 0.8s ease;
+  }
+  
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(40px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Card Header */
+  .conference-card .card-header {
+    background: linear-gradient(135deg, #1976d2, #42a5f5);
+    color: white;
+    padding: 1.2rem;
+    font-size: 1.3rem;
+    font-weight: bold;
+  }
+  
+  /* Conference Details */
+  .conference-details li {
+    margin-bottom: 12px;
+    font-size: 1rem;
+  }
+  
+  .conference-details i {
+    margin-right: 8px;
+    color: #1976d2;
+  }
+  
+  /* Badges */
+  .conference-badge {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    padding: 0.5rem 0.75rem;
+    border-radius: 12px;
+    font-size: 0.85rem;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+  
+  .badge-online {
+    background: #4caf50;
+    color: white;
+  }
+  
+  .badge-onsite {
+    background: #f44336;
+    color: white;
+  }
+  
+  /* Zoom Button */
+  .zoom-btn {
+    background: linear-gradient(135deg, #42a5f5, #1e88e5);
+    color: white;
+    border: none;
+    font-weight: bold;
+    padding: 0.75rem;
+    font-size: 1rem;
+    transition: background 0.4s ease, transform 0.4s ease;
+  }
+  
+  .zoom-btn:hover {
+    background: linear-gradient(135deg, #1e88e5, #1565c0);
+    transform: scale(1.05);
+    box-shadow: 0 4px 15px rgba(21, 101, 192, 0.5);
+    color: #fff;
+  }
+  
+  /* No Conference Message */
+  .alert {
+    border-radius: 15px;
+    padding: 2rem;
+  }
+  

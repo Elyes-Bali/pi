@@ -1,0 +1,60 @@
+<div class="conference-detail-container">
+    <h2>Conference Details</h2>
+  
+    <!-- Display conference details if conference object is available -->
+    <div *ngIf="conference" class="conference-details">
+      <p><strong>Conference Title:</strong> {{ conference.topic }}</p>
+      <p><strong>Location:</strong> {{ conference.location }}</p>
+    </div>
+  
+    <div *ngIf="!conference" class="loading-message">
+      <p>Loading conference details...</p>
+    </div>
+    
+    <!-- Feedback Section -->
+    <div class="feedback-section">
+      <h3>Feedback for this Conference</h3>
+      <div *ngIf="feedbackList.length === 0" class="no-feedback">
+        <p>No feedback yet. Be the first to leave a review!</p>
+      </div>
+      <div *ngFor="let feedback of feedbackList" class="feedback-card">
+        <p><strong>Rating:</strong> {{ feedback.rating }} / 5</p>
+        <p><strong>Comment:</strong> {{ feedback.content }}</p>
+      </div>
+    </div>
+  
+    <!-- Submit Feedback Section -->
+    <div class="submit-feedback-section">
+      <h3>Leave Your Feedback</h3>
+      <form (ngSubmit)="submitFeedback()" class="feedback-form">
+        <div class="form-group">
+          <label for="rating">Rating (1-5):</label>
+          <input 
+            type="number" 
+            id="rating" 
+            name="rating" 
+            min="1" 
+            max="5" 
+            [(ngModel)]="rating" 
+            required 
+            class="form-control"
+          />
+        </div>
+  
+        <div class="form-group">
+          <label for="feedbackContent">Your Feedback:</label>
+          <textarea 
+            id="feedbackContent" 
+            name="feedbackContent" 
+            [(ngModel)]="feedbackContent" 
+            rows="4" 
+            required
+            class="form-control"
+          ></textarea>
+        </div>
+  
+        <button type="submit" [disabled]="!rating || !feedbackContent" class="submit-button">Submit Feedback</button>
+      </form>
+    </div>
+  </div>
+  

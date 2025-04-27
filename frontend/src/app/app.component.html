@@ -1,0 +1,111 @@
+<div class="app-layout">
+  <!-- Sidebar (Only for Admin) -->
+  <ng-container *ngIf="isAdminLoggedIn">
+    <app-sidebar></app-sidebar>
+  </ng-container>
+
+  <!-- Main Content (Includes Navbar + Page Content) -->
+  <div class="main-content">
+    <mat-toolbar class="navbar">
+      <a *ngIf="!isAdminLoggedIn" routerLink="/" class="home-link"
+        >Smart Meetings</a
+      >
+      <a *ngIf="isAdminLoggedIn" routerLink="/admin/org" class="home-link"
+        >Smart Meetings</a
+      >
+      <span class="spacer"></span>
+
+      <!-- Mobile Menu Icon (Only shown on small screens) -->
+      <button mat-icon-button class="menu-button" (click)="toggleMenu()">
+        <mat-icon>menu</mat-icon>
+      </button>
+
+      <!-- Navigation Buttons (Responsive) -->
+      <div class="nav-links" [ngClass]="{ open: isMenuOpen }">
+        <ng-container
+          *ngIf="
+            !isParticipantLoggedIn && !isAdminLoggedIn && !isOrganizerLoggedIn
+          "
+        >
+        <button mat-button routerLink="/aboutus" routerLinkActive="active">
+          About Us
+        </button>
+          <button mat-button routerLink="/signup" routerLinkActive="active">
+            Register
+          </button>
+          <button mat-button routerLink="/login" routerLinkActive="active">
+            Login
+          </button>
+        </ng-container>
+
+        <ng-container *ngIf="isAdminLoggedIn">
+          <button mat-button routerLink="/admin/org" routerLinkActive="active">
+            Dashboard
+          </button>
+
+          <button mat-button routerLinkActive="active" (click)="logout()">
+            Logout
+          </button>
+        </ng-container>
+
+        <ng-container *ngIf="isParticipantLoggedIn">
+          <button mat-icon-button [matMenuTriggerFor]="notificationMenu">
+            <mat-icon>notifications</mat-icon>
+            <span class="notification-badge" *ngIf="notifications.length > 0">{{
+              notifications.length
+            }}</span>
+          </button>
+
+          <!-- Notification Dropdown -->
+          <mat-menu #notificationMenu="matMenu">
+            <ng-container
+              *ngIf="notifications.length > 0; else noNotifications"
+            >
+            <button mat-menu-item *ngFor="let notification of notifications; let i = index" [attr.data-index]="i">
+              {{ notification.message }}
+            </button>
+            
+            </ng-container>
+            <ng-template #noNotifications>
+              <button mat-menu-item disabled>No new notifications</button>
+            </ng-template>
+          </mat-menu>
+          <button mat-button routerLink="/aboutus" routerLinkActive="active">
+            About Us
+          </button>
+          <button mat-button routerLink="/conferences">Conferences</button>
+          <button mat-button routerLink="/preferences">Interests</button>
+          <button mat-button routerLink="/participated-Conferences">Participated</button>
+          <button mat-button routerLink="/post">Posts</button>
+
+    
+          <button mat-button routerLinkActive="active" (click)="logout()">
+            Logout
+          </button>
+        </ng-container>
+
+        <ng-container *ngIf="isOrganizerLoggedIn">
+          <button mat-button routerLink="/aboutus" routerLinkActive="active">
+            About Us
+          </button>
+          <!-- Profile Dropdown -->
+          <button mat-button [matMenuTriggerFor]="profileMenu">Profile</button>
+          <mat-menu #profileMenu="matMenu">
+            <button mat-menu-item routerLink="/myconferences">
+              Participants
+            </button>
+            <button mat-menu-item routerLink="/add-conf">New Conference</button>
+            <button mat-menu-item routerLink="/orgaConf">All Conference</button>
+          </mat-menu>
+
+          <button mat-button routerLinkActive="active" (click)="logout()">
+            Logout
+          </button>
+        </ng-container>
+      </div>
+    </mat-toolbar>
+
+    <!-- Page Content -->
+    <router-outlet></router-outlet>
+  </div>
+</div>

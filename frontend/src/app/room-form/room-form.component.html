@@ -1,0 +1,29 @@
+<h2>Add New Room</h2>
+
+<form #form="ngForm" (ngSubmit)="saveRoom(form)" class="room-form">
+  <!-- Room Name -->
+  <label for="name">Room Name:</label>
+  <input type="text" id="name" [(ngModel)]="room.name" name="name" required #name="ngModel" />
+  <div *ngIf="name.invalid && name.touched" class="error">Room name is required.</div>
+
+  <!-- Room Number -->
+  <label for="roomNumber">Room Number:</label>
+  <input type="number" id="roomNumber" [(ngModel)]="room.roomNumber" name="roomNumber" required #roomNumber="ngModel" />
+  <div *ngIf="roomNumber.invalid && roomNumber.touched" class="error">Room number is required.</div>
+
+  <!-- Building -->
+  <label for="building">Building:</label>
+  <input type="text" id="building" [(ngModel)]="room.building" name="building" required #building="ngModel" />
+  <div *ngIf="building.invalid && building.touched" class="error">Building name is required.</div>
+
+  <!-- Capacity -->
+  <label for="capacity">Room Capacity:</label>
+  <input type="number" id="capacity" [(ngModel)]="room.capacity" name="capacity" required #capacity="ngModel" />
+  <div *ngIf="capacity.invalid && capacity.touched" class="error">Room capacity is required.</div>
+
+  <!-- Submit Button (disabled if form is invalid) -->
+  <button type="submit" >Save</button>
+</form>
+
+<!-- Add styles for error messages -->
+

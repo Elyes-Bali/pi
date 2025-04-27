@@ -1,0 +1,83 @@
+/* ==============================
+   🎨 SESSION FORM DESIGN
+=============================== */
+.session-form {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 30px;
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    font-family: 'Arial', sans-serif;
+  }
+  
+  /* Error Message Styling */
+  .alert {
+    background-color: #e74c3c;
+    color: white;
+    padding: 15px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+  }
+  
+  .alert-danger {
+    background-color: #e74c3c;
+    color: white;
+  }
+  
+  /* Form Styling */
+  .session-form .form-group {
+    margin-bottom: 20px;
+  }
+  
+  .session-form label {
+    font-size: 1rem;
+    color: #2c3e50;
+    margin-bottom: 5px;
+    display: block;
+  }
+  
+  .session-form input, 
+  .session-form select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+  }
+  
+  .session-form input[type="datetime-local"] {
+    height: 40px;
+  }
+  
+  .session-form button {
+    background: #1abc9c;
+    color: white;
+    padding: 12px 20px;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    width: 100%;
+    font-size: 1.1rem;
+    border: none;
+    transition: background-color 0.3s ease;
+  }
+  
+  .session-form button:hover {
+    background: #16a085;
+  }
+  
+  .session-form button:disabled {
+    background-color: #bdc3c7;
+    cursor: not-allowed;
+  }
+  
+  /* Focus effect */
+  .session-form input:focus, 
+  .session-form select:focus {
+    outline: none;
+    border-color: #1abc9c;
+  }
+  

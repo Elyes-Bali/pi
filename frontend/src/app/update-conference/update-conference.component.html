@@ -1,0 +1,53 @@
+<div class="dashboard-container">
+  <!-- Sidebar Navigation -->
+  <aside class="sidebar">
+    <h3>Dashboard</h3>
+    <ul>
+      <li><a href="/">Home</a></li>
+      <li><a href="/myconferences">My Participants</a></li>
+      <li><a href="/add-conf">New Conference</a></li>
+      <li><a href="/orgaConf">All Conference</a></li>
+
+    </ul>
+  </aside>
+
+  <!-- Main Content -->
+  <main class="dashboard-content">
+    <h2>Update Conference</h2>
+
+    <div *ngIf="conference" class="form-container">
+      <form [formGroup]="conferenceForm" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+          <label for="topic">Topic</label>
+          <input id="topic" formControlName="topic" placeholder="Enter conference topic" />
+        </div>
+
+        <div class="form-group">
+          <label for="location">Location</label>
+          <input id="location" formControlName="location" placeholder="Enter conference location" />
+        </div>
+
+        <div class="form-group">
+          <label for="deadline">Deadline</label>
+          <input id="deadline" type="date" formControlName="deadline" />
+        </div>
+
+        <div class="form-group">
+          <label>
+            <input type="checkbox" formControlName="onlineMode"> Is this an online conference (Zoom)?
+          </label>
+        </div>
+      
+        <!-- Zoom Link Field (conditionally shown) -->
+        <div class="form-group" >
+          <label for="zoomLink">Zoom Link</label>
+          <input id="zoomLink" type="text" class="form-control" formControlName="zoomLink">
+        </div>
+
+        <button type="submit" class="btn btn-primary" [disabled]="conferenceForm.invalid">
+          Update Conference
+        </button>
+      </form>
+    </div>
+  </main>
+</div>
