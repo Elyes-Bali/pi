@@ -63,5 +63,9 @@ userDetails: UserDetails = new UserDetails();
         }
       );
     }
+    shouldDisplayZoomLink(conference: any): boolean {
+      // Check if the conference is online or if at least one participant has accepted
+      return conference.onlineMode && conference.participants.some(p => p.accepted === true);
+    }
     
 }

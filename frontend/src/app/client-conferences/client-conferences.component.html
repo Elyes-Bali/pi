@@ -20,8 +20,8 @@
                 <li><i class="bi bi-tags-fill"></i> <strong>Category:</strong> {{ conference.category }}</li>
               </ul>
   
-              <ng-container *ngIf="conference.onlineMode">
-                <a [href]="conference.zoomLink" target="_blank" class="btn zoom-btn w-100 mt-auto">
+              <ng-container *ngIf="shouldDisplayZoomLink(conference)">
+                <a [href]="conference.zoomLink" target="_blank" class="btn zoom-btn w-100 mt-auto" *ngIf="conference.zoomLink">
                   🎥 Join Zoom Meeting
                 </a>
               </ng-container>
